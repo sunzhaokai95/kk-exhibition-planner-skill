@@ -1,0 +1,15 @@
+.DS_Store
+._*
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+env/
+
+brief-form.html
+*.log
+
+.claude/settings.local.json
