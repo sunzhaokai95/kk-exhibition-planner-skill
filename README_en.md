@@ -15,6 +15,10 @@ KK Exhibition Planner works like a navigation system for exhibition pre-planning
 
 It is designed for the messy middle of exhibition planning: moving from “too much material and no clear direction” to “a theme, a structure, and an outline ready for design development.” It is suitable for curators, exhibition designers, museum professionals, cultural tourism planners, and teams that need to organize exhibition requirements into a pre-planning outline.
 
+## 🌱 Why It Exists
+
+I am a curator, which means I often receive a pile of client materials and a deadline that sounds like “we need to see a proposal next week.” Over the years, I realized that the most valuable and hardest-to-teach part of exhibition planning is the concept: deriving what an exhibition is really about from a company, a city, a history, or a cultural resource. This step is often explained as “look more, think more, find the feeling.” KK Exhibition Planner is the lightweight open-source version of the method I have built through years of project work. It does not handle space planning or visual design; it keeps only the most universal and most easily blocked part: from materials, to theme, to exhibition outline. For experienced planners, it is an accelerator. For newcomers, it is a practical mentor that does more than say “find the feeling.”
+
 ## ✨ Core Features
 
 | Feature | Description |
@@ -47,9 +51,13 @@ flowchart TD
 
 ## 🚀 Installation
 
-Claude Code can load personal Skills from `~/.claude/skills/`, and project-level Skills from `.claude/skills/`. This repository is already a Skill folder. After installation, the folder should contain `SKILL.md`.
+This repository is already a Skill folder. After installation, the folder should contain `SKILL.md`. Different AI workbenches use different skills directories, so choose the path that matches your environment.
 
-### macOS / Linux
+### Claude Code
+
+Claude Code can load personal Skills from `~/.claude/skills/`, and project-level Skills from `.claude/skills/`.
+
+#### macOS / Linux
 
 ```bash
 git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
@@ -63,7 +71,7 @@ Expected path:
 ~/.claude/skills/kk-exhibition-planner-skill/SKILL.md
 ```
 
-### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
@@ -75,6 +83,38 @@ Expected path:
 
 ```text
 %USERPROFILE%\.claude\skills\kk-exhibition-planner-skill\SKILL.md
+```
+
+### Codex / Work Buddy
+
+If you use Codex, or a Work Buddy setup that supports a local skills directory, copy the repository into `~/.codex/skills/`. If your Work Buddy app uses a custom skills directory, follow the path shown in its settings.
+
+#### macOS / Linux
+
+```bash
+git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
+mkdir -p ~/.codex/skills
+cp -R kk-exhibition-planner-skill ~/.codex/skills/
+```
+
+Expected path:
+
+```text
+~/.codex/skills/kk-exhibition-planner-skill/SKILL.md
+```
+
+#### Windows PowerShell
+
+```powershell
+git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
+Copy-Item -Recurse -Force ".\kk-exhibition-planner-skill" "$env:USERPROFILE\.codex\skills\"
+```
+
+Expected path:
+
+```text
+%USERPROFILE%\.codex\skills\kk-exhibition-planner-skill\SKILL.md
 ```
 
 ### Use as a Git Submodule
@@ -89,22 +129,14 @@ git commit -m "Add KK exhibition planner skill"
 
 ## 💬 Usage
 
-When triggered, the Skill first outputs this exact opening line:
-
-```text
-你好，我是策展人孙兆楷的分身小助理 KK。
-```
-
-It then explains the six-step workflow and guides the user step by step. It identifies the project type first, generates an information collection form, and only proceeds to analysis and theme derivation after the user provides project materials.
+When triggered, the Skill explains the six-step workflow and guides the user step by step. It identifies the project type first, generates an information collection form, and only proceeds to analysis and theme derivation after the user provides project materials.
 
 Short example:
 
 ```text
 User: I want to plan a cultural tourism theme venue. Please help me start from pre-planning.
 
-KK: 你好，我是策展人孙兆楷的分身小助理 KK。
-
-I will proceed with the following workflow:
+Assistant: I will proceed with the following workflow:
 Step 1 Identify project type
 Step 2 Information collection (generate HTML form)
 Step 3 Material digestion and project analysis
@@ -154,7 +186,7 @@ The following examples are anonymized and retain only the planning methodology i
 
 ```text
 kk-exhibition-planner-skill/
-├── SKILL.md                         # Main Skill workflow: opening line, six steps, principles
+├── SKILL.md                         # Main Skill workflow: six steps and principles
 ├── README.md                        # Chinese documentation
 ├── README_en.md                     # English documentation
 ├── CONTRIBUTING.md                  # Contribution guide
@@ -196,4 +228,4 @@ This project is released under the [MIT License](LICENSE).
 
 Author: **Curator Sun Zhaokai**
 
-KK Exhibition Planner Skill is distilled from curator Sun Zhaokai's exhibition pre-planning methodology. It aims to make curatorial reasoning clearer, more stable, and easier for teams to discuss and review.
+KK Exhibition Planner Skill is distilled from curator Sun Zhaokai's exhibition pre-planning methodology. It aims to make curatorial reasoning clearer, more stable, and easier for teams to discuss and review. Thanks to the members of the WeChat group “新时代的纺织工人们” for their support and encouragement.

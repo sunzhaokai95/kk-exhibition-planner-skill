@@ -15,6 +15,10 @@ KK 策展助手像一套“展览前策导航仪”：当策展人面对大量�
 
 它解决的是展览策划中最容易失控的一段工作：从“资料很多、方向很散”到“主题明确、结构清楚、可以进入设计深化”。适合策展人、展陈设计师、文博从业者、文旅策划人员，以及需要把展厅需求整理成前策大纲的团队使用。
 
+## 🌱 创作初衷
+
+我是一名策展人，日常面对的常常是甲方甩来的一堆资料和一句“下周要看方案”。做久了会发现，展览策划最值钱、也最难教的部分，是从企业、城市、历史或文化资源里推导出“这个展到底要讲什么”的立意；过去这一步经常被归结为“多看、多想、找感觉”。KK 策展助手就是我把多年项目经验里那套不那么玄学的方法拆出来后的“青春版”：它不碰空间、不碰设计，只保留最通用也最容易卡壳的一段，从资料到主题，再到展览大纲。对老手，它是加速器；对新人，它像一位不藏私的入门师傅，至少不会只让你“找找感觉”。
+
 ## ✨ 核心特性
 
 | 特性 | 说明 |
@@ -47,9 +51,13 @@ flowchart TD
 
 ## 🚀 安装
 
-Claude Code 支持把个人 Skill 放在 `~/.claude/skills/`，也可以把团队项目 Skill 放在项目内的 `.claude/skills/`。本仓库本身就是一个 Skill 文件夹，安装后目录中应能看到 `SKILL.md`。
+本仓库本身就是一个 Skill 文件夹，安装后目录中应能看到 `SKILL.md`。不同 AI 工作台的 skills 目录略有差异，按你的使用环境选择即可。
 
-### macOS / Linux
+### Claude Code
+
+Claude Code 支持把个人 Skill 放在 `~/.claude/skills/`，也可以把团队项目 Skill 放在项目内的 `.claude/skills/`。
+
+#### macOS / Linux
 
 ```bash
 git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
@@ -63,7 +71,7 @@ cp -R kk-exhibition-planner-skill ~/.claude/skills/
 ~/.claude/skills/kk-exhibition-planner-skill/SKILL.md
 ```
 
-### Windows PowerShell
+#### Windows PowerShell
 
 ```powershell
 git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
@@ -75,6 +83,38 @@ Copy-Item -Recurse -Force ".\kk-exhibition-planner-skill" "$env:USERPROFILE\.cla
 
 ```text
 %USERPROFILE%\.claude\skills\kk-exhibition-planner-skill\SKILL.md
+```
+
+### Codex / Work Buddy
+
+如果你使用 Codex，或使用支持本地 skills 目录的 Work Buddy，可以把仓库复制到 `~/.codex/skills/`。如果你的 Work Buddy 配置了自定义 skills 目录，请以应用设置中的路径为准。
+
+#### macOS / Linux
+
+```bash
+git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
+mkdir -p ~/.codex/skills
+cp -R kk-exhibition-planner-skill ~/.codex/skills/
+```
+
+安装完成后的关键路径：
+
+```text
+~/.codex/skills/kk-exhibition-planner-skill/SKILL.md
+```
+
+#### Windows PowerShell
+
+```powershell
+git clone https://github.com/sunzhaokai95/kk-exhibition-planner-skill.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
+Copy-Item -Recurse -Force ".\kk-exhibition-planner-skill" "$env:USERPROFILE\.codex\skills\"
+```
+
+安装完成后的关键路径：
+
+```text
+%USERPROFILE%\.codex\skills\kk-exhibition-planner-skill\SKILL.md
 ```
 
 ### 作为项目子模块使用
@@ -89,22 +129,14 @@ git commit -m "Add KK exhibition planner skill"
 
 ## 💬 使用方法
 
-触发 Skill 后，助手会先原样输出固定开场白：
-
-```text
-你好，我是策展人孙兆楷的分身小助理 KK。
-```
-
-随后它会说明 6 步流程，并按步骤推进。流程不会跳步：先判断项目类型，再生成信息收集表，等用户填写资料后才进入分析与主题推导。
+触发 Skill 后，它会说明 6 步流程，并按步骤推进。流程不会跳步：先判断项目类型，再生成信息收集表，等用户填写资料后才进入分析与主题推导。
 
 简短示例：
 
 ```text
 用户：我想做一个文旅主题展馆策划，帮我从前策开始梳理。
 
-KK：你好，我是策展人孙兆楷的分身小助理 KK。
-
-接下来我会按以下流程推进：
+助手：接下来我会按以下流程推进：
 Step 1 识别项目类型
 Step 2 信息收集（生成 HTML 表单）
 Step 3 资料消化与项目分析
@@ -154,7 +186,7 @@ Step 6 概念推导 PPT 生成（可选）
 
 ```text
 kk-exhibition-planner-skill/
-├── SKILL.md                         # Skill 主流程：固定开场白、6 步工作流、核心原则
+├── SKILL.md                         # Skill 主流程：6 步工作流、核心原则
 ├── README.md                        # 中文说明文档
 ├── README_en.md                     # 英文说明文档
 ├── CONTRIBUTING.md                  # 贡献指南
@@ -196,4 +228,4 @@ kk-exhibition-planner-skill/
 
 作者：**策展人 孙兆楷**
 
-KK 策展助手由策展人孙兆楷的展览前策方法论沉淀而成，旨在让策展推导过程更清晰、更稳定，也更便于团队协作与复盘。
+KK 策展助手由策展人孙兆楷的展览前策方法论沉淀而成，旨在让策展推导过程更清晰、更稳定，也更便于团队协作与复盘。感谢微信群《新时代的纺织工人们》群友们的支持和鼓励。
