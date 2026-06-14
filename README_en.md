@@ -1,6 +1,6 @@
 # 🧭 KK Exhibition Planner Skill
 
-English | [简体中文](README.md)
+English | [简体中文](README_zh.md)
 
 > A Claude Code Skill for exhibition pre-planning. It turns scattered client materials, spatial constraints, and audience goals into a structured exhibition outline that can be discussed, copied, and further developed.
 
@@ -187,8 +187,9 @@ The following examples are anonymized and retain only the planning methodology i
 ```text
 kk-exhibition-planner-skill/
 ├── SKILL.md                         # Main Skill workflow: six steps and principles
-├── README.md                        # Chinese documentation
-├── README_en.md                     # English documentation
+├── README.md                        # English documentation
+├── README_zh.md                     # Chinese documentation
+├── README_en.md                     # Legacy English documentation link
 ├── CONTRIBUTING.md                  # Contribution guide
 ├── LICENSE                          # MIT License
 ├── .gitignore                       # Git ignore rules

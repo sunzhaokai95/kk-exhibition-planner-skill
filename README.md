@@ -1,61 +1,61 @@
-# 🧭 KK 策展助手
+# 🧭 KK Exhibition Planner Skill
 
-[English](README_en.md) | 简体中文
+English | [简体中文](README_zh.md)
 
-> 一个面向展览前策的 Claude Code Skill，把零散的甲方资料、空间条件与受众目标，推导为可复制、可讨论、可继续深化的展览大纲。
+> A Claude Code Skill for exhibition pre-planning. It turns scattered client materials, spatial constraints, and audience goals into a structured exhibition outline that can be discussed, copied, and further developed.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Skill Type](https://img.shields.io/badge/Skill-Claude%20Code%20Skill-5B67CA)
 ![Language](https://img.shields.io/badge/Language-%E4%B8%AD%E6%96%87%20%2F%20EN-orange)
 ![Domain](https://img.shields.io/badge/Domain-Exhibition%20Planning-0F766E)
 
-## 🎯 这是什么
+## 🎯 What It Is
 
-KK 策展助手像一套“展览前策导航仪”：当策展人面对大量甲方资料、空间条件、受众诉求和内容素材时，它不会直接跳到创意口号，而是按固定流程先识别项目类型、收集信息、分析项目本质，再推导主题、组织叙事线路，最后输出标准化展览大纲。
+KK Exhibition Planner works like a navigation system for exhibition pre-planning. When curators face a pile of client notes, space information, audience requirements, and content fragments, it does not jump straight to a slogan. Instead, it identifies the project type, collects structured information, analyzes the essence of the project, derives a theme, selects a narrative route, and then produces a standard exhibition outline.
 
-它解决的是展览策划中最容易失控的一段工作：从“资料很多、方向很散”到“主题明确、结构清楚、可以进入设计深化”。适合策展人、展陈设计师、文博从业者、文旅策划人员，以及需要把展厅需求整理成前策大纲的团队使用。
+It is designed for the messy middle of exhibition planning: moving from “too much material and no clear direction” to “a theme, a structure, and an outline ready for design development.” It is suitable for curators, exhibition designers, museum professionals, cultural tourism planners, and teams that need to organize exhibition requirements into a pre-planning outline.
 
-## 🌱 创作初衷
+## 🌱 Why It Exists
 
-我是一名策展人，日常面对的常常是甲方甩来的一堆资料和一句“下周要看方案”。做久了会发现，展览策划最值钱、也最难教的部分，是从企业、城市、历史或文化资源里推导出“这个展到底要讲什么”的立意；过去这一步经常被归结为“多看、多想、找感觉”。KK 策展助手就是我把多年项目经验里那套不那么玄学的方法拆出来后的“青春版”：它不碰空间、不碰设计，只保留最通用也最容易卡壳的一段，从资料到主题，再到展览大纲。对老手，它是加速器；对新人，它像一位不藏私的入门师傅，至少不会只让你“找找感觉”。
+I am a curator, which means I often receive a pile of client materials and a deadline that sounds like “we need to see a proposal next week.” Over the years, I realized that the most valuable and hardest-to-teach part of exhibition planning is the concept: deriving what an exhibition is really about from a company, a city, a history, or a cultural resource. This step is often explained as “look more, think more, find the feeling.” KK Exhibition Planner is the lightweight open-source version of the method I have built through years of project work. It does not handle space planning or visual design; it keeps only the most universal and most easily blocked part: from materials, to theme, to exhibition outline. For experienced planners, it is an accelerator. For newcomers, it is a practical mentor that does more than say “find the feeling.”
 
-## ✨ 核心特性
+## ✨ Core Features
 
-| 特性 | 说明 |
+| Feature | Description |
 | --- | --- |
-| 6 步结构化策展流程 | 从项目类型识别推进到信息收集、项目分析、前策推导、展览大纲与可选概念推导 PPT 文案。 |
-| 三类项目分别指导 | 覆盖企业展厅、博物馆/文化馆、文旅/主题展馆，每类都有独立信息清单、分析框架和大纲要点。 |
-| 五种叙事线路方法论 | 支持金字塔式、梯式、平行式、散点式、立体式五类故事线判断。 |
-| HTML 信息收集表单 | 通过本地 Python 脚本生成 `brief-form.html`，便于把项目信息收集为可回传文本。 |
-| 三种概念推导 PPT 范式 | 提供受众驱动型、概念类比型、破局立意型三种逐页文案骨架。 |
+| 6-step exhibition planning workflow | Moves from project identification to information collection, project analysis, theme derivation, outline generation, and optional concept deck copy. |
+| Guidance for three project types | Covers enterprise showrooms, museums/cultural venues, and cultural tourism/theme venues, each with its own checklist and planning logic. |
+| Five narrative route methods | Supports pyramid, ladder, parallel, scatter, and multidimensional narrative structures. |
+| HTML brief form generation | Uses a local Python script to generate `brief-form.html`, making project information easier to collect and paste back into the assistant. |
+| Three concept deck frameworks | Provides audience-driven, concept-analogy, and breakthrough-positioning page flows for concept derivation decks. |
 
-## 🧩 工作流程
+## 🧩 Workflow
 
 ```mermaid
 flowchart TD
-  A["Step 1 识别项目类型"] --> B["Step 2 信息收集<br/>生成 HTML 表单"]
-  B --> C["Step 3 资料消化与项目分析"]
-  C --> D["Step 4 前策推导<br/>从项目本质到展览主题"]
-  D --> E["Step 5 展览大纲生成"]
-  E --> F["Step 6 概念推导 PPT 生成<br/>可选逐页文案"]
+  A["Step 1 Identify Project Type"] --> B["Step 2 Collect Information<br/>Generate HTML Brief Form"]
+  B --> C["Step 3 Digest Materials<br/>Project Analysis"]
+  C --> D["Step 4 Pre-planning Derivation<br/>From Essence to Theme"]
+  D --> E["Step 5 Generate Exhibition Outline"]
+  E --> F["Step 6 Generate Concept Deck Copy<br/>Optional"]
 ```
 
-| 步骤 | 产出 | 说明 |
+| Step | Output | Description |
 | --- | --- | --- |
-| Step 1 | 项目类型 | 判断项目属于 A 企业展厅、B 博物馆/文化馆、C 文旅/主题展馆。 |
-| Step 2 | 信息收集表 | 运行脚本生成 HTML 表单，让用户填写项目资料并回传。 |
-| Step 3 | 项目分析摘要 | 梳理委托方背景、展示对象、核心诉求、空间约束和独特价值点。 |
-| Step 4 | 主题推导 | 找本质张力、选叙事线路、写主题情绪句、确定主题词和主题释义。 |
-| Step 5 | 展览大纲 | 按标准框架输出树形结构和可复制 Markdown 表格。 |
-| Step 6 | PPT 逐页文案 | 可选生成概念推导 PPT 的页面标题、正文要点和视觉提示。 |
+| Step 1 | Project type | Identifies whether the project is A enterprise showroom, B museum/cultural venue, or C cultural tourism/theme venue. |
+| Step 2 | Brief form | Runs the script to generate an HTML form for collecting project information. |
+| Step 3 | Project analysis summary | Clarifies client background, audience, goals, constraints, and the unique value or core tension. |
+| Step 4 | Theme derivation | Finds the core tension, selects a narrative route, writes an internal emotional sentence, and defines the theme. |
+| Step 5 | Exhibition outline | Outputs a tree structure and a copy-friendly Markdown table. |
+| Step 6 | Concept deck copy | Optionally generates page-by-page concept derivation copy with visual prompts. |
 
-## 🚀 安装
+## 🚀 Installation
 
-本仓库本身就是一个 Skill 文件夹，安装后目录中应能看到 `SKILL.md`。不同 AI 工作台的 skills 目录略有差异，按你的使用环境选择即可。
+This repository is already a Skill folder. After installation, the folder should contain `SKILL.md`. Different AI workbenches use different skills directories, so choose the path that matches your environment.
 
 ### Claude Code
 
-Claude Code 支持把个人 Skill 放在 `~/.claude/skills/`，也可以把团队项目 Skill 放在项目内的 `.claude/skills/`。
+Claude Code can load personal Skills from `~/.claude/skills/`, and project-level Skills from `.claude/skills/`.
 
 #### macOS / Linux
 
@@ -65,7 +65,7 @@ mkdir -p ~/.claude/skills
 cp -R kk-exhibition-planner-skill ~/.claude/skills/
 ```
 
-安装完成后的关键路径：
+Expected path:
 
 ```text
 ~/.claude/skills/kk-exhibition-planner-skill/SKILL.md
@@ -79,7 +79,7 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills"
 Copy-Item -Recurse -Force ".\kk-exhibition-planner-skill" "$env:USERPROFILE\.claude\skills\"
 ```
 
-安装完成后的关键路径：
+Expected path:
 
 ```text
 %USERPROFILE%\.claude\skills\kk-exhibition-planner-skill\SKILL.md
@@ -87,7 +87,7 @@ Copy-Item -Recurse -Force ".\kk-exhibition-planner-skill" "$env:USERPROFILE\.cla
 
 ### Codex / Work Buddy
 
-如果你使用 Codex，或使用支持本地 skills 目录的 Work Buddy，可以把仓库复制到 `~/.codex/skills/`。如果你的 Work Buddy 配置了自定义 skills 目录，请以应用设置中的路径为准。
+If you use Codex, or a Work Buddy setup that supports a local skills directory, copy the repository into `~/.codex/skills/`. If your Work Buddy app uses a custom skills directory, follow the path shown in its settings.
 
 #### macOS / Linux
 
@@ -97,7 +97,7 @@ mkdir -p ~/.codex/skills
 cp -R kk-exhibition-planner-skill ~/.codex/skills/
 ```
 
-安装完成后的关键路径：
+Expected path:
 
 ```text
 ~/.codex/skills/kk-exhibition-planner-skill/SKILL.md
@@ -111,15 +111,15 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
 Copy-Item -Recurse -Force ".\kk-exhibition-planner-skill" "$env:USERPROFILE\.codex\skills\"
 ```
 
-安装完成后的关键路径：
+Expected path:
 
 ```text
 %USERPROFILE%\.codex\skills\kk-exhibition-planner-skill\SKILL.md
 ```
 
-### 作为项目子模块使用
+### Use as a Git Submodule
 
-如果你希望某个团队项目固定使用同一版本，可以把它作为 git submodule 放进项目级 skills 目录：
+For team projects that should pin a shared version, add the Skill as a project-level submodule:
 
 ```bash
 mkdir -p .claude/skills
@@ -127,105 +127,106 @@ git submodule add https://github.com/sunzhaokai95/kk-exhibition-planner-skill.gi
 git commit -m "Add KK exhibition planner skill"
 ```
 
-## 💬 使用方法
+## 💬 Usage
 
-触发 Skill 后，它会说明 6 步流程，并按步骤推进。流程不会跳步：先判断项目类型，再生成信息收集表，等用户填写资料后才进入分析与主题推导。
+When triggered, the Skill explains the six-step workflow and guides the user step by step. It identifies the project type first, generates an information collection form, and only proceeds to analysis and theme derivation after the user provides project materials.
 
-简短示例：
+Short example:
 
 ```text
-用户：我想做一个文旅主题展馆策划，帮我从前策开始梳理。
+User: I want to plan a cultural tourism theme venue. Please help me start from pre-planning.
 
-助手：接下来我会按以下流程推进：
-Step 1 识别项目类型
-Step 2 信息收集（生成 HTML 表单）
-Step 3 资料消化与项目分析
-Step 4 前策推导 → 展览主题
-Step 5 展览大纲生成
-Step 6 概念推导 PPT 生成（可选）
+Assistant: I will proceed with the following workflow:
+Step 1 Identify project type
+Step 2 Information collection (generate HTML form)
+Step 3 Material digestion and project analysis
+Step 4 Pre-planning derivation -> exhibition theme
+Step 5 Exhibition outline generation
+Step 6 Concept derivation PPT generation (optional)
 
-请先确认项目属于以下哪类：A 企业展厅、B 博物馆/文化馆、C 文旅/主题展馆。
+Please confirm the project type first: A enterprise showroom, B museum/cultural venue, or C cultural tourism/theme venue.
 ```
 
-## 🏛️ 三类项目与适用场景
+## 🏛️ Project Types And Use Cases
 
-| 项目类型 | 典型场景 | 核心策划起点 |
+| Project Type | Typical Scenarios | Core Planning Starting Point |
 | --- | --- | --- |
-| A 企业展厅 | 品牌馆、产品展示中心、销售体验厅、园区展厅 | 回到企业本质、品牌价值、受众转化目标与行业角色。 |
-| B 博物馆/文化馆 | 历史博物馆、纪念馆、非遗馆、校史馆、档案馆、科技馆 | 把学术内容故事化，先建立完整内容体系，再转化为可参观的叙事结构。 |
-| C 文旅/主题展馆 | 城市展示馆、规划馆、景区展厅、沉浸式主题馆、IP 主题展 | 从运营、传播、体验和资源独特性反推内容组织。 |
+| A Enterprise showroom | Brand hall, product display center, sales experience hall, industrial park showroom | Return to the enterprise essence, brand value, audience conversion goals, and industry role. |
+| B Museum/cultural venue | History museum, memorial hall, intangible heritage venue, school history hall, archive, science venue | Transform academic content into a story-driven exhibition structure. |
+| C Cultural tourism/theme venue | City exhibition hall, planning hall, scenic-area venue, immersive theme venue, IP theme exhibition | Reverse-plan content from operation, communication, experience, and resource uniqueness. |
 
-## 🧠 叙事线路方法论
+## 🧠 Narrative Route Methods
 
-| 故事线 | 逻辑结构 | 适用场景 |
+| Route | Logic | Best Fit |
 | --- | --- | --- |
-| 金字塔式 | 1 个核心观点 -> 3 到 5 个论点 -> 各自展开 | 最通用，适合多数项目。 |
-| 梯式 | 层层拔高：现实 -> 超脱 -> 理想/未来 | 有强价值观的品牌馆、文化馆、历史叙事或未来愿景类项目。 |
-| 平行式 | 多个独立主题板块并列呈现 | 政府馆、规划馆、多产品线企业、综合类内容。 |
-| 散点式 | 多场景围绕一个精神内核，形散神聚 | 艺术馆、强 IP 主题展、文旅体验馆。 |
-| 立体式 | 多种逻辑嵌套综合使用 | 大型复杂项目，或同时具备时间、空间、专题多重线索的项目。 |
+| Pyramid | One core point -> 3 to 5 arguments -> detailed expansion | The most universal structure for most projects. |
+| Ladder | Step-by-step elevation: reality -> transcendence -> ideal/future | Brand halls, cultural venues, historical narratives, or future-vision projects with strong values. |
+| Parallel | Multiple independent thematic sections presented side by side | Government venues, planning halls, multi-product enterprises, and comprehensive content. |
+| Scatter | Multiple scenes orbit one spiritual core | Art venues, strong IP theme exhibitions, and cultural tourism experience spaces. |
+| Multidimensional | Multiple narrative logics nested together | Large complex projects with time, space, and thematic layers. |
 
-## 🪄 概念推导范式
+## 🪄 Concept Derivation Frameworks
 
-| 范式 | 适用判断 | 产出特征 |
+| Framework | When To Use | Output Character |
 | --- | --- | --- |
-| 受众驱动型 | 多方受众需要被说服，例如企业、政府、招商、园区类项目。 | 先回答“为谁做”，再从受众诉求反推主题，理性稳健。 |
-| 概念类比型 | 主题是抽象概念、理念或体验，需要建立记忆点。 | 以普世概念和连续设问抬升主题，感性、有冲击力。 |
-| 破局立意型 | 价值传承、纪念、教育、校史、行业精神等项目以立意升华为重点。 | 先否定平庸定位，再建立更高层的精神性价值定位。 |
+| Audience-driven | Multiple stakeholders need to be convinced, such as enterprise, government, investment, or park projects. | Starts from “who is this for” and derives the theme from audience needs. Rational and steady. |
+| Concept-analogy | The theme is an abstract concept, idea, or experience that needs a strong memory point. | Uses universal analogies and questions to elevate the theme. Emotional and memorable. |
+| Breakthrough-positioning | Value inheritance, commemoration, education, school history, or industry spirit is the priority. | Rejects generic positioning first, then builds a higher spiritual value position. |
 
-## 📂 实战案例
+## 📂 Practical Examples
 
-以下案例均已脱敏，仅保留策展方法论的应用过程。更多说明见 [examples/README.md](examples/README.md)。
+The following examples are anonymized and retain only the planning methodology in action. See [examples/README.md](examples/README.md) for more context.
 
-| 案例 | 项目类型 | 叙事线路 | 推导范式 |
+| Case | Project Type | Narrative Route | Derivation Framework |
 | --- | --- | --- | --- |
-| [某精准医疗企业展厅](examples/01-enterprise-hall.md) | A 企业展厅 | 梯式 + 立体式 | ① 受众驱动型 |
-| [某市城市生态科普馆](examples/02-eco-museum.md) | B 科普馆 | 平行式 | ③ 破局立意型 |
+| [An anonymized precision medicine enterprise showroom](examples/01-enterprise-hall.md) | A Enterprise showroom | Ladder + multidimensional | ① Audience-driven |
+| [An anonymized urban ecology science venue](examples/02-eco-museum.md) | B Science venue | Parallel | ③ Breakthrough-positioning |
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```text
 kk-exhibition-planner-skill/
-├── SKILL.md                         # Skill 主流程：6 步工作流、核心原则
-├── README.md                        # 中文说明文档
-├── README_en.md                     # 英文说明文档
-├── CONTRIBUTING.md                  # 贡献指南
+├── SKILL.md                         # Main Skill workflow: six steps and principles
+├── README.md                        # English documentation
+├── README_zh.md                     # Chinese documentation
+├── README_en.md                     # Legacy English documentation link
+├── CONTRIBUTING.md                  # Contribution guide
 ├── LICENSE                          # MIT License
-├── .gitignore                       # Git 忽略规则
+├── .gitignore                       # Git ignore rules
 ├── examples/
-│   ├── README.md                    # 脱敏案例索引
-│   ├── 01-enterprise-hall.md        # 企业展厅匿名化流程案例
-│   └── 02-eco-museum.md             # 城市生态科普馆匿名化流程案例
+│   ├── README.md                    # Anonymized example index
+│   ├── 01-enterprise-hall.md        # Anonymized enterprise showroom workflow example
+│   └── 02-eco-museum.md             # Anonymized urban ecology science venue workflow example
 ├── references/
-│   ├── type-a-enterprise.md         # 企业展厅：信息清单、分析框架、推导要点
-│   ├── type-b-museum.md             # 博物馆/文化馆：资料结构、故事化方法、大纲要点
-│   ├── type-c-cultural-tourism.md   # 文旅/主题馆：运营、传播、体验导向策划指南
-│   ├── outline-template.md          # 展览大纲层级定义、表格模板、自检清单
-│   └── concept-deck-flows.md        # 三种概念推导 PPT 逐页文案范式
+│   ├── type-a-enterprise.md         # Enterprise showroom checklist, analysis, derivation logic
+│   ├── type-b-museum.md             # Museum/cultural venue content structure and storytelling logic
+│   ├── type-c-cultural-tourism.md   # Cultural tourism/theme venue planning guide
+│   ├── outline-template.md          # Outline hierarchy, table template, self-checklist
+│   └── concept-deck-flows.md        # Three page-by-page concept deck frameworks
 └── scripts/
-    └── generate_brief_form.py       # 本地生成 HTML 项目信息收集表
+    └── generate_brief_form.py       # Local HTML brief form generator
 ```
 
-## ❓ 常见问题 FAQ
+## ❓ FAQ
 
-| 问题 | 回答 |
+| Question | Answer |
 | --- | --- |
-| 是否需要联网？ | Skill 本体和 `generate_brief_form.py` 脚本不要求联网。脚本会在本地生成 HTML 表单。若你让助手额外查公开资料，则取决于你的 Claude Code 环境和授权。 |
-| 数据隐私如何？ | 表单脚本只在本地生成 `brief-form.html`，不会主动上传数据。你填写并复制回对话的资料，将按你所使用的 Claude Code/模型服务环境处理。 |
-| 能否自定义项目类型？ | 可以改造 `references/` 中的方法文件和 `scripts/generate_brief_form.py` 的字段定义。建议新增类型时先明确它与企业、博物馆/文化馆、文旅/主题馆三类的差异。 |
-| 它会生成完整展览文本吗？ | 不会。当前 Skill 的边界是展览前策与大纲，止步于主题、结构、内容要点和概念推导 PPT 逐页文案。 |
-| 它会直接导出 PPTX 吗？ | 不会。Step 6 输出的是结构化 Markdown 逐页文案，便于后续复制到 PPT 或设计软件中深化。 |
+| Does it require internet access? | The Skill itself and `generate_brief_form.py` do not require internet access. The script generates a local HTML form. Any extra public research depends on your Claude Code environment and permissions. |
+| How is data privacy handled? | The form script only generates `brief-form.html` locally and does not upload data. Any materials you paste back into the chat are handled by your Claude Code/model service environment. |
+| Can I customize project types? | Yes. You can modify the reference files and the field definitions in `scripts/generate_brief_form.py`. For new types, first clarify how they differ from the existing A/B/C categories. |
+| Does it generate final exhibition copy? | No. The current Skill is scoped to pre-planning and outline generation: theme, structure, content points, and concept deck copy. |
+| Does it export real PPTX files? | No. Step 6 outputs structured Markdown copy for each page, which can be pasted into presentation or design tools. |
 
-## 🤝 贡献指南
+## 🤝 Contributing
 
-欢迎提交改进建议与 PR。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)，尤其注意不要提交真实甲方项目名称、企业名称或未脱敏资料。
+Contributions and PRs are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) first, especially the requirement to avoid real client names, company names, or non-anonymized project materials.
 
-## 📄 许可证
+## 📄 License
 
-本项目基于 [MIT License](LICENSE) 开源。
+This project is released under the [MIT License](LICENSE).
 
-## 🙏 作者/致谢
+## 🙏 Author / Acknowledgements
 
-作者：**策展人 孙兆楷**
+Author: **Curator Sun Zhaokai**
 
-KK 策展助手由策展人孙兆楷的展览前策方法论沉淀而成，旨在让策展推导过程更清晰、更稳定，也更便于团队协作与复盘。感谢微信群《新时代的纺织工人们》群友们的支持和鼓励。
+KK Exhibition Planner Skill is distilled from curator Sun Zhaokai's exhibition pre-planning methodology. It aims to make curatorial reasoning clearer, more stable, and easier for teams to discuss and review. Thanks to the members of the WeChat group “新时代的纺织工人们” for their support and encouragement.
